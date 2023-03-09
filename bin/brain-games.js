@@ -1,3 +1,2 @@
 #!/usr/bin/env node
-import {name} from '/Users/romangizatulin/backend-project-44/src/cli.js';
-	
+import { name } from '../src/cli.js';
