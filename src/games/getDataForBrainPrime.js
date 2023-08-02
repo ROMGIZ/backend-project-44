@@ -1,14 +1,17 @@
 import getRandomIntNum from '../utils.js';
 
-const isSimpleNum = (num) => {
-  const iter = (counter) => {
-    const remainder = num % counter;
-    if (counter > Math.floor(num ** 1 / 2)) return true;
-    if (remainder === 0) return false;
-    return iter(counter + 1);
-  };
+const isPrime = (num) => {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
 
-  return iter(2);
+  const limit = Math.floor(Math.sqrt(num));
+  if (num % 2 === 0 || num % 3 === 0) return false;
+
+  for (let i = 5; i <= limit; i += 6) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+  }
+
+  return true;
 };
 
 const getDescription = () => 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -16,7 +19,7 @@ const getDescription = () => 'Answer "yes" if given number is prime. Otherwise a
 const getRoundData = () => {
   const num = getRandomIntNum(0);
   const question = num.toString();
-  const answer = isSimpleNum(num) ? 'yes' : 'no';
+  const answer = isPrime(num) ? 'yes' : 'no';
   return [question, answer];
 };
 

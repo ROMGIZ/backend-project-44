@@ -18,7 +18,7 @@ const getRoundData = () => {
   const firstNum = getRandomIntNum();
   const secondNum = getRandomIntNum();
   const operations = ['+', '-', '*'];
-  const randomOperation = operations[getRandomIntNum(0, 2)];
+  const randomOperation = operations[getRandomIntNum(0, operations.length - 1)];
   const question = `${firstNum} ${randomOperation} ${secondNum}`;
   const answer = calc(firstNum, secondNum, randomOperation).toString();
   return [question, answer];
