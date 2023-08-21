@@ -21,5 +21,3 @@ const engine = (description, game) => {
 };
 
 export default engine;
-
-

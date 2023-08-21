@@ -10,7 +10,7 @@ const getProgressionAndHiddenEl = () => {
   } while (indexHiddenEl === firstNum || indexHiddenEl === progressionDifference);
 
   const arrProgression = [firstNum];
-  for (let n = 1; n < 10; n++) {
+  for (let n = 1; n < 10; n += 1) {
     arrProgression[n] = arrProgression[n - 1] + progressionDifference;
   }
 

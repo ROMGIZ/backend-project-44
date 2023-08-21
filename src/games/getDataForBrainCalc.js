@@ -2,13 +2,14 @@ import getRandomIntNum from '../utils.js';
 
 const calc = (a, b, operation) => {
   switch (operation) {
-    default:
     case '+':
       return a + b;
     case '-':
       return a - b;
     case '*':
       return a * b;
+    default:
+      throw new Error(`Unknown operation: ${operation}`);
   }
 };
 

@@ -1,8 +1,6 @@
 import getRandomIntNum from '../utils.js';
 
-const gcd = (a, b) => {
-  return b === 0 ? a : gcd(b, a % b);
-};
+const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 
 const getDescription = () => 'Find the greatest common divisor of given numbers.';
 
